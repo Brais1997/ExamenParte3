@@ -1,14 +1,17 @@
 package busqueda;
 
+import javax.swing.JOptionPane;
+
 public class Busqueda {
 
     public static void main(String[] args) {
+     
         int[] numeros = new int[100];
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = i * 5;
         }
         Busqueda ejemplo = new Busqueda();
-        int indice = ejemplo.busquedaBinaria(numeros, 450, 0, numeros.length - 1);
+        int indice = ejemplo.busquedaBinaria(numeros,450, 0, numeros.length - 1);
         System.out.println("El indice del valor '450' es: " + indice);
     }
 
