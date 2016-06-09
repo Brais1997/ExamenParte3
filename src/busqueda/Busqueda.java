@@ -1,17 +1,32 @@
 package busqueda;
 
+
 import javax.swing.JOptionPane;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 
 public class Busqueda {
 
     public static void main(String[] args) {
-     
-        int[] numeros = new int[100];
+    
+
+
+     int numElArray=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduce o numero de elementos do Array"));
+        int digito=Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce el digito"));
+        
+        int[] numeros = new int[numElArray];
+
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = i * 5;
         }
         Busqueda ejemplo = new Busqueda();
-        int indice = ejemplo.busquedaBinaria(numeros,450, 0, numeros.length - 1);
+
+        int indice = ejemplo.busquedaBinaria(numeros,digito , 0, numeros.length - 1);
+
         System.out.println("El indice del valor '450' es: " + indice);
     }
 
@@ -32,5 +47,5 @@ public class Busqueda {
                 return busquedaBinaria(listado, clave, posMitad + 1, posFinal);
             }
         }
-    }
-}
+
+}}
