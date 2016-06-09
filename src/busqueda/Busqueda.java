@@ -12,21 +12,24 @@ import javax.swing.JTextField;
 public class Busqueda {
 
     public static void main(String[] args) {
-    
-
-
-     int numElArray=Integer.parseInt(JOptionPane.showInputDialog(null, "Introduce o numero de elementos do Array"));
-        int digito=Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce el digito"));
-        
-        int[] numeros = new int[numElArray];
-
+        JPanel panel = new JPanel();
+        //JPanel panel1 = new JPanel();
+        JTextField numElArray = new JTextField(5);
+        JTextField digito = new JTextField(5);
+ 
+        panel.add(new JLabel("Numero elementos Array:"));
+        panel.add(numElArray);
+     
+        panel.add(new JLabel("Digito:"));
+        panel.add(digito);
+      
+  
+        int[] numeros = new int[Integer.parseInt(numElArray.getText())];
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = i * 5;
         }
         Busqueda ejemplo = new Busqueda();
-
-        int indice = ejemplo.busquedaBinaria(numeros,digito , 0, numeros.length - 1);
-
+        int indice = ejemplo.busquedaBinaria(numeros, Integer.parseInt(digito.getText()), 0, numeros.length - 1);
         System.out.println("El indice del valor '450' es: " + indice);
     }
 
